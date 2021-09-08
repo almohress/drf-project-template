@@ -1,0 +1,9 @@
+.github/
+.gitlab-ci.yml
+.git
+.gitignore
+*.env
+.vscode
+*.sqlite3
+.dockerignore
+Dockerfile*
