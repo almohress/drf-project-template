@@ -37,7 +37,7 @@ clean-test: ## remove test and coverage artifacts
 	rm -fr .pytest_cache
 
 lint: ## check style with flake8
-	flake8 drf_wrapper tests
+	flake8 {{ project_name }} tests
 
 test: ## run tests quickly with the default Python
 	python manage.py test
@@ -57,4 +57,5 @@ install: clean ## install the package to the active Python's site-packages
 	python setup.py install
 
 rmdb: ## remove migrations and db.sqlite3
-	@echo rmdb
+	find . -name 'migrations' -exec rm -rf {} +
+	find . -name '*.sqlite3' -exec rm -f {} +
